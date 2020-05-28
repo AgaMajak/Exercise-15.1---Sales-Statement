@@ -8,9 +8,9 @@ import java.util.List;
 
 public class StatementCalculator {
 
-    private BigDecimal bruttoSale = BigDecimal.ZERO;
-    private BigDecimal vatSum = BigDecimal.ZERO;
-    private BigDecimal nettoSale = BigDecimal.ZERO;
+    private BigDecimal bruttoSale;
+    private BigDecimal vatSum;
+    private BigDecimal nettoSale;
 
     public StatementCalculator(BigDecimal bruttoSale, BigDecimal vatSum, BigDecimal nettoSale) {
         this.bruttoSale = bruttoSale;
@@ -45,5 +45,3 @@ public class StatementCalculator {
     }
 
 }
-
-
