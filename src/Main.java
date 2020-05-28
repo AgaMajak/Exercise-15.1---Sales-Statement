@@ -14,7 +14,7 @@ public class Main {
 
         List<Product> products = ProductFileReader.returnListWithProductsFromFile(file);
         SalesSummary.showSalesStatement(products);
-        SalesSummary.writeMathOperationsResultInfo(products);
+        SalesSummary.writeSalesStatementToFile(products);
 
     }
 }

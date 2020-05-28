@@ -25,7 +25,7 @@ public class SalesSummary {
         System.out.println("Suma sprzedaży brutto: " + statementCalculator.getBruttoSale() + " zł");
     }
 
-    public static void writeMathOperationsResultInfo(List<Product> products) {
+    public static void writeSalesStatementToFile(List<Product> products) {
         FileCreator.createFile(FILE);
         try (
                 FileWriter fileWriter = new FileWriter(FILE_NAME);
