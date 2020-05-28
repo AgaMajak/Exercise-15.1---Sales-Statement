@@ -1,6 +1,6 @@
 import data.Product;
 import logic.ProductFileReader;
-import logic.SaleStatement;
+import logic.SalesSummary;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,8 +13,8 @@ public class Main {
         File file = new File(fileName);
 
         List<Product> products = ProductFileReader.returnListWithProductsFromFile(file);
-        SaleStatement.showSalesStatement(products);
-        SaleStatement.writeMathOperationsResultInfo(products);
+        SalesSummary.showSalesStatement(products);
+        SalesSummary.writeMathOperationsResultInfo(products);
 
     }
 }
