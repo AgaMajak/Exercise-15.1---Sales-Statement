@@ -1,6 +1,7 @@
 package logic;
 
 import data.Product;
+import data.Statement;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -18,11 +19,12 @@ public class SalesSummary {
         for (Product product : products) {
             System.out.println(product);
         }
-        StatementCalculator statementCalculator = StatementCalculator.calculateSalesStatement(products);
 
-        System.out.println("Sprzedaż netto: " + statementCalculator.getNettoSale() + " zł");
-        System.out.println("Suma podatku VAT ze sprzedaży: " + statementCalculator.getVatSum() + " zł");
-        System.out.println("Suma sprzedaży brutto: " + statementCalculator.getBruttoSale() + " zł");
+        Statement statement = StatementCalculator.calculateSalesStatement(products);
+
+        System.out.println("Sprzedaż netto: " + statement.getNettoSale() + " zł");
+        System.out.println("Suma podatku VAT ze sprzedaży: " + statement.getVatSum() + " zł");
+        System.out.println("Suma sprzedaży brutto: " + statement.getBruttoSale() + " zł");
     }
 
     public static void writeSalesStatementToFile(List<Product> products) {
@@ -36,13 +38,13 @@ public class SalesSummary {
                 writer.write(line);
                 writer.newLine();
             }
-            StatementCalculator statementCalculator = StatementCalculator.calculateSalesStatement(products);
+            Statement statement = StatementCalculator.calculateSalesStatement(products);
 
-            writer.write("Sprzedaż netto: " + statementCalculator.getNettoSale() + " zł");
+            writer.write("Sprzedaż netto: " + statement.getNettoSale() + " zł");
             writer.newLine();
-            writer.write("Suma podatku VAT ze sprzedaży: " + statementCalculator.getVatSum() + " zł");
+            writer.write("Suma podatku VAT ze sprzedaży: " + statement.getVatSum() + " zł");
             writer.newLine();
-            writer.write("Suma sprzedaży brutto: " + statementCalculator.getBruttoSale() + " zł");
+            writer.write("Suma sprzedaży brutto: " + statement.getBruttoSale() + " zł");
             writer.newLine();
 
         } catch (IOException e) {
